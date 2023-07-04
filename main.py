@@ -64,7 +64,7 @@ async def start_handler(request):
     global state_override
     loop = asyncio.get_running_loop()
     loop.create_task(play_video())
-    state_override = True
+    state_override = False
     log("APP", "Déblocage du lecteur")
     return web.Response(text='Lecture démarrée.')
 
@@ -73,7 +73,7 @@ async def stop_handler(request):
     global state_override
     loop = asyncio.get_running_loop()
     loop.call_soon(stop_video)
-    state_override = False
+    state_override = True
     log("APP", "Blocage du lecteur")
     return web.Response(text='Lecture arrêtée.')
 
