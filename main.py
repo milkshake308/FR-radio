@@ -140,11 +140,9 @@ app.router.add_post('/schedule', set_schedule_handler)
 load_config_from_json(CONFIG)
 
 # Créer une nouvelle boucle d'événements
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
 
-web_thread = threading.Thread(target=lambda: web.run_app(app))
-web_thread.start()
+
+
 
 #  Gestion de la planification horaire
 
@@ -159,5 +157,9 @@ async def check_schedule():
             stop_video()
         await asyncio.sleep(10)  # Vérifier toutes les 60 secondes
 
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 loop.create_task(check_schedule())
-loop.run_forever()
+scheduler = threading.Thread(target=lambda: loop.run_forever())
+scheduler.start()
+web.run_app(app)
