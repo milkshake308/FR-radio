@@ -106,7 +106,7 @@ async def set_url_handler(request):
         return web.Response(text='Erreur lors de la lecture du JSON.', status=400)
     
 async def get_schedule_handler(request):
-    return web.json_response(json.dump(schedule))
+    return web.json_response(schedule)
 
 async def set_schedule_handler(request):
     global schedule
@@ -157,7 +157,7 @@ async def check_schedule():
         elif not is_within_allowed_time() and player.is_playing():
             log("SCHDUL", "Arrêt du lecteur", "MOTIF : Planification horaire")
             stop_video()
-        await asyncio.sleep(5)  # Vérifier toutes les 60 secondes
+        await asyncio.sleep(10)  # Vérifier toutes les 60 secondes
 
 loop.create_task(check_schedule())
 loop.run_forever()
