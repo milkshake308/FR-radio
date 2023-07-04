@@ -1,0 +1,16 @@
+{
+    "stream_url": "http://hydra.cdnstream.com/1539_128",
+    "schedule": [
+        {
+            "active_days": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "start_hour": 8,
+            "end_hour": 20
+        }
+    ]
+}
