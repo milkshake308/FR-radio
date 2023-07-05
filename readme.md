@@ -1,5 +1,5 @@
 ## Contexte
-Une demande de la direction a été faite pour que l’on établisse notre système de gestion audio dont voici le cahier de charge synthétisé :
+Une demande a été faite pour que l’on établisse notre système de gestion audio propre dont voici le cahier de charge résumé :
 - Qu’il y ait une lecture automatisée et continue d’une webradio.
 - L’URL du flux puisse être modifiée à distance.
 - La planification horaire puisse être modifiée à distance.
