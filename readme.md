@@ -7,6 +7,18 @@ Une demande a été faite pour que l’on établisse notre système de gestion a
 - Que la solution puisse reprendre automatiquement après une panne de courant.
 - Que si le matériel échoue, on puisse redéployer une instance de la solution rapidement.
 
+## Installation
+0. Cloner le dépôt :
+```bash
+git clone https://github.com/milkshake308/radio.git
+```
+1. Copiez le fichier `config_example.json` en `config.json`.
+2. Modifiez le fichier `config.json` selon vos besoins, en spécifiant l'URL du flux audio et la programmation horaire.
+3. Exécutez la commande suivante pour installer les dépendances nécessaires :
+```bash
+pip install -r requirements.txt
+```
+
 ## API
 Entre autres, le programme dispose d'une API HTTP rudimentaire permettant :
 
